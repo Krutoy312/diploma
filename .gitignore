@@ -1,0 +1,50 @@
+# Игнорируем виртуальное окружение
+venv/
+.venv/
+env/
+ENV/
+*.env
+**/*.env
+# Игнорируем файлы базы данных SQLite
+db.sqlite3
+*.sqlite3
+
+# Игнорируем файлы кеша и временные файлы Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Игнорируем файлы конфигурации IDE
+.vscode/
+.idea/
+*.iml
+
+# Игнорируем миграции, если они не нужны
+**/migrations/__pycache__/
+**/migrations/*.pyc
+**/migrations/*.pyo
+
+# Игнорируем статические и медиафайлы (если генерируются)
+staticfiles/
+media/
+*.log
+
+# Игнорируем файлы от Docker, если используешь
+docker-compose.override.yml
+*.dockerfile
+
+# Игнорируем файлы кеша pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Игнорируем результаты тестирования
+.tox/
+.nox/
+coverage.xml
+htmlcov/
+.pytest_cache/
+
+# Игнорируем скрытые файлы macOS и Windows
+.DS_Store
+Thumbs.db

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генерация и отправка постов</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Создание поста</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <textarea name="manual_text" id="manualText" placeholder="Введите текст поста...">{{ generated_text }}</textarea>
+            <button type="submit" name="generate">Сгенерировать текст</button>
+            <textarea name="generate_text" id="generateText" placeholder="Сгенерированный текст..."></textarea>
+            <input type="file" name="media" id="media" accept="image/*,video/*" multiple>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="platforms" value="tiktok"> ТикТок</label>
+                <label><input type="checkbox" name="platforms" value="odnoklassniki"> Одноклассники</label>
+                <label><input type="checkbox" name="platforms" value="telegram"> Телеграм</label>
+                <label><input type="checkbox" name="platforms" value="instagram"> Инстаграм</label>
+            </div>
+            <button type="submit" name="send">Отправить пост</button>
+        </form>
+    </div>
+</body>
+</html>
